@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 50vh;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    background-color: #000;
+    margin: 32px;
+    padding: 12px;
+    color: white;
+}
+
+/* Caixa do aluno */
+.aluno {
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+}
+
+/* Caixa do titulo do nome do aluno */
+.aluno__title{
+    text-align: center;
+    padding: 8px;
+    color: white;
+}
+
+/* Aluno aprovado*/
+.verde{
+    background-color: rgb(148, 180, 87);
+    height: 200px;
+    width: 200px;
+}
+
+/* Aluno reprovado */
+.vermelho{
+    background-color: rgb(247, 116, 93);
+    height: 200px;
+    width: 200px;
+}

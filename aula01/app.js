@@ -7,6 +7,7 @@ function somar() {
     const nota2 = Number(document.getElementById('nota2').value)
     const formulario = document.getElementById('form')
 
+    //let A variavel só funciona dentro do bloco
     let situacao = document.getElementById('situacao')
     situacao.value = (nota1 + nota2)/2
 
