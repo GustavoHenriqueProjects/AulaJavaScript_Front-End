@@ -29,16 +29,20 @@
     color: white;
 }
 
-/* Aluno aprovado*/
+/* div Aluno aprovado*/
 .verde{
     background-color: rgb(148, 180, 87);
     height: 200px;
     width: 200px;
 }
 
-/* Aluno reprovado */
+/* div Aluno reprovado */
 .vermelho{
     background-color: rgb(247, 116, 93);
     height: 200px;
     width: 200px;
+}
+
+.img{
+    height: 50px;
 }

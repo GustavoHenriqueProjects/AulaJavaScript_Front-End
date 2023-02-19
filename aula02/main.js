@@ -1,42 +1,26 @@
+ /* *********************************************************************************
+  * 'use strict' Policiame o meu código, ex: Não posso usar variaveis não declaradas:
+  *      a = 1 está errado.
+  *  let a = 1 está certo
+  ***********************************************************************************/
 'use strict'
 
-//Criando uma variavel const como referencia para o botão
+//Criando uma variavel const como referência para o botão
 const adicionar = document.getElementById('add')
-
-/*
- *  function adicionarCard(){
- *     alert('Olá Mundo!')
- *   }
- *  
-*/
-
-/*
-
-   const adicionarCard = () => {
-    //const container = document.querySelector('container')
-   const container = document.getElementById('container')
-
-    //Conteudo da tag
-    //container.textContent = "Gustavo"
-    //Mantem o conteudo atual mais o que to colocando
-    container.innerHTML += '<div class="items"></div>'
-}
-*/
 
 const adicionarCard = () => {
 
-    //A variavel container revebe a referencia da classe container
+    //A variavel container recebe a referência da classe container
     const container = document.getElementById('container')
 
     //criando uma nova div toda vez que for clicado no botão
     const novaDiv = document.createElement('div')
 
-    //Colocando a divs dentro da div container qunado for clicado o botão
+    //Colocando as divs dentro da div container quando for clicado no botão
     container.appendChild(novaDiv)
 
-    //Dando o novo de classe ="items" para cada div criada
+    //Dando o nome da classe ="items" para cada div criada
     novaDiv.classList.add('items')
-
 
 }
 

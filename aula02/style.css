@@ -8,11 +8,16 @@
 .container{
     min-height: 50vh;
     display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+    
+    gap: 12px; /* É para dar um espaço entre cada quadrado criado*/
+
+    flex-wrap: wrap; /*Para quebrar a linha quando atinge o fim da largura da classe e da tela*/
+
     background-color: rgb(44, 190, 171);
-    margin: 32px;
-    padding: 32px;
+
+    margin: 32px; /*Margin de 32px da div container para a tela do computador dos dois lados*/
+
+    padding: 32px; /*Um padding de 32px de todos os obejetos dentro do container*/
     color: white;
 }
 
