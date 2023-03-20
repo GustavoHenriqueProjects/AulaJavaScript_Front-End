@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+path{
+    fill: #ECCEA7;
+    stroke: #ffff;
+    stroke-width: 2px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+path:hover{
+    fill: #FA9E27;
+}
+
