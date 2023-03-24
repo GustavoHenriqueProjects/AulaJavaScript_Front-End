@@ -10,13 +10,18 @@ const filloutInfoCard = ($estadoSelecionado, $cidadesDoEstado) => {
 
     //console.log(estadoSelecionado)
     console.log(cidadesDoEstado)
-
     document.getElementById('uf').innerHTML = estadoSelecionado.uf
     document.getElementById('title-uf').innerHTML = estadoSelecionado.descricao
     document.getElementById('answer-capital').innerHTML = estadoSelecionado.capital
     document.getElementById('answer-local').innerHTML = estadoSelecionado.regiao
-   let fernanda =  document.getElementById('allnamescitys').innerHTML = cidadesDoEstado.cidades
-    console.log(fernanda)
+    const cardCidades = document.getElementById('allnamescitys')
+    cidadesDoEstado.cidades.forEach(element => {
+        const cidades = document.createElement('p')
+        cidades.classList.add('cidades')
+        cidades.innerHTML = element
+        cardCidades.append(cidades)
+    });
+
 }
 
 
@@ -46,7 +51,9 @@ const getEstado = async ({target}) => {
      const cidadesDoEstado = await getCidadesDoEstado(estado)
     // console.log(cidadesDoEstado)
 
-     filloutInfoCard(estadoSelecionado, cidadesDoEstado)
+    const todasCidades = document.getElementById('allcitys')
+    todasCidades.classList.add('allcitysNone')
+    filloutInfoCard(estadoSelecionado, cidadesDoEstado)
 
 
 }
