@@ -7,21 +7,20 @@ const filloutInfoCard = ($estadoSelecionado, $cidadesDoEstado) => {
 
     let estadoSelecionado = $estadoSelecionado
     let cidadesDoEstado = $cidadesDoEstado
-
-    //console.log(estadoSelecionado)
-    console.log(cidadesDoEstado)
-    document.getElementById('uf').innerHTML = estadoSelecionado.uf
-    document.getElementById('title-uf').innerHTML = estadoSelecionado.descricao
-    document.getElementById('answer-capital').innerHTML = estadoSelecionado.capital
-    document.getElementById('answer-local').innerHTML = estadoSelecionado.regiao
-    const cardCidades = document.getElementById('allnamescitys')
-    cidadesDoEstado.cidades.forEach(element => {
-        const cidades = document.createElement('p')
-        cidades.classList.add('cidades')
-        cidades.innerHTML = element
-        cardCidades.append(cidades)
-    });
-
+    if(estadoSelecionado.uf != undefined){
+        document.getElementById('uf').innerHTML = estadoSelecionado.uf
+        document.getElementById('title-uf').innerHTML = estadoSelecionado.descricao
+        document.getElementById('answer-capital').innerHTML = estadoSelecionado.capital
+        document.getElementById('answer-local').innerHTML = estadoSelecionado.regiao
+        const cardCidades = document.getElementById('allnamescitys')
+        cardCidades.innerHTML = '' //Essa String vazia remove todos os elementos filhos do html, limpa as informações.
+        cidadesDoEstado.cidades.forEach(element => {
+            const cidades = document.createElement('p')
+            cidades.classList.add('cidades')
+            cidades.innerHTML = element
+            cardCidades.append(cidades)
+        });
+    }
 }
 
 
@@ -41,21 +40,20 @@ const getEstado = async ({target}) => {
     // const quantidade = produto.quantidade
     const { id, quantidade } = produto
     *******************************************/
+   //A propriedade target retorna o elemento HTML em que o evento foi acionado
+   if(target.id != 'map'){
+    const estado = target.id.replace('BR-', '')
+    //console.log(estado)
+
+    const estadoSelecionado = await getEstadoSelecionado(estado)
+    //console.log(estadoSelecionado)
+
+    const cidadesDoEstado = await getCidadesDoEstado(estado)
+   // console.log(cidadesDoEstado)
+
+   filloutInfoCard(estadoSelecionado, cidadesDoEstado)
+   }
     
-     const estado = target.id.replace('BR-', '')
-     //console.log(estado)
-
-     const estadoSelecionado = await getEstadoSelecionado(estado)
-     //console.log(estadoSelecionado)
-
-     const cidadesDoEstado = await getCidadesDoEstado(estado)
-    // console.log(cidadesDoEstado)
-
-    const todasCidades = document.getElementById('allcitys')
-    todasCidades.classList.add('allcitysNone')
-    filloutInfoCard(estadoSelecionado, cidadesDoEstado)
-
-
 }
 
 mapa.addEventListener('click', getEstado)
